@@ -23,6 +23,17 @@
     <h1>We serve the Genuine Product</h1>
 
     {% include 'navbar.html'%}
+ 
+  {% if messages %}
+  <ul class="messages">
+    {% for message in messages %}
+    <div class="alert alert--{{message.tags}}">
+      <p class="alert__message">{{message}}</p>
+      <button class=""></button>
+    </div>
+    {% endfor %}
+</ul>
+{% endif %}
 
     {% block content %}
 
@@ -32,4 +43,5 @@
   
 
 </body>
+<script src="{% static 'uikit/app.js' %}"></script>
 </html>
